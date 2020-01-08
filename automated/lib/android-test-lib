@@ -85,6 +85,7 @@ wait_boot_completed() {
             break
         else
             sleep 3
+            adb devices
         fi
     done
 
