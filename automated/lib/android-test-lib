@@ -82,11 +82,12 @@ wait_boot_completed() {
     while [ "$(date +%s)" -lt "$end" ]; do
         #adb devices 
         if adb -s ${ANDROID_SERIAL} shell getprop sys.boot_completed | grep "1"; then
+            
             boot_completed=true
             break
         else
             sleep 3
-            
+            adb -s ${ANDROID_SERIAL} shell getprop sys.boot_completed
             break
             
         fi
