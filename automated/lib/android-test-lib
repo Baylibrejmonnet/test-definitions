@@ -87,8 +87,8 @@ wait_boot_completed() {
             break
         else
             sleep 3
-            adb -s ${ANDROID_SERIAL} shell getprop sys.boot_completed
-            break
+            adb -s ${ANDROID_SERIAL} shell getprop 
+            
             
         fi
     done
