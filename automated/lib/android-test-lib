@@ -86,6 +86,8 @@ wait_boot_completed() {
             break
         else
             sleep 3
+            boot_completed=true
+            break
             
         fi
     done
