@@ -81,12 +81,12 @@ wait_boot_completed() {
     local boot_completed=false
     while [ "$(date +%s)" -lt "$end" ]; do
         #adb devices 
-        if adb -s AMLG12ASEI610 shell getprop sys.boot_completed | grep "1"; then
+        if adb -s ${ANDROID_SERIAL} shell getprop sys.boot_completed | grep "1"; then
             boot_completed=true
             break
         else
             sleep 3
-            boot_completed=true
+            
             break
             
         fi
