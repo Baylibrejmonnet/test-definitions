@@ -80,12 +80,13 @@ wait_boot_completed() {
     # shellcheck disable=SC2039
     local boot_completed=false
     while [ "$(date +%s)" -lt "$end" ]; do
-        if adb shell getprop sys.boot_completed | grep "1"; then
+        #adb devices 
+        if adb -s AMLG12ASEI610 shell getprop sys.boot_completed | grep "1"; then
             boot_completed=true
             break
         else
             sleep 3
-            adb devices
+            
         fi
     done
 
