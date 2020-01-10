@@ -18,7 +18,7 @@ PKG_DEPS="coreutils usbutils curl wget zip xz-utils python-lxml python-setuptool
 #PKG_DEPS="ca-certificates-java coreutils usbutils curl wget zip xz-utils python-lxml python-setuptools python-pexpect aapt lib32z1-dev libc6-dev-i386 lib32gcc1 libc6-i386 libstdc++6 libgcc1 zlib1g libncurses5 python-dev python-protobuf protobuf-compiler python-virtualenv python-pip python-pexpect psmisc"
 dist_name
 case "${dist}" in
-    ubuntu)uL3zwd33CXYqAvj
+    ubuntu)
         dpkg --add-architecture i386
         apt-get update -q
         install_deps "${PKG_DEPS} ${JDK}"
