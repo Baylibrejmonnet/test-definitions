@@ -63,7 +63,8 @@ adb_root() {
         echo "DUT already has adbd running as root"
     else
         adb root || info_msg "adb root timed out"
-        timeout 600 adb wait-for-device || error_fatal "Device NOT found!"
+        #timeout 600 adb wait-for-device || error_fatal "Device NOT found!"
+        timeout 600 adb devices || error_fatal "Device NOT found!"
         adb devices
         # After adb root, device number within the USB bus changes.
         adb_debug_info
