@@ -34,9 +34,14 @@ adb_debug_info() {
 }
 
 initialize_adb() {
-    sleep 60 
+    echo "try  1st time reboot " 
     adb reboot
-    sleep 90 
+    while [ $? -ne 0 ]; do
+        echo "try again"
+        sleep 5
+        adb reboot
+    done
+
     adb_debug_info
     adb start-server
     timeout 600 adb wait-for-device || error_fatal "Device NOT found!"
