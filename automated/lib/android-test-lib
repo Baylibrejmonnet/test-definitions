@@ -28,13 +28,14 @@ adb_debug_info() {
     fi
     info_msg "===== list fastboot devices start ========="
     fastboot devices
+    adb devices
     info_msg "===== list fastboot devices end ========="
     info_msg "===== default ANDROID_SERIAL=${ANDROID_SERIAL} ========="
 }
 
 initialize_adb() {
     sleep 60 
-    adb -s ${SERIAL_ANDROID} reboot
+    adb reboot
     sleep 90 
     adb_debug_info
     adb start-server
