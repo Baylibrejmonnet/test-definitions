@@ -33,6 +33,9 @@ adb_debug_info() {
 }
 
 initialize_adb() {
+    sleep 60 
+    adb -s ${SERIAL_ANDROID} reboot
+    sleep 90 
     adb_debug_info
     adb start-server
     timeout 600 adb wait-for-device || error_fatal "Device NOT found!"
@@ -72,7 +75,7 @@ adb_root() {
     fi
 }
 
-wait_boot_completed() {
+wait_boot_completed() { 
     [ "$#" -ne 1 ] && error_msg "Usage: wait_for_boot_completed timeout_in_seconds"
     # shellcheck disable=SC2039
     local timeout="$1"
