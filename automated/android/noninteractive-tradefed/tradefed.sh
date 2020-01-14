@@ -4,7 +4,7 @@
 . ../../lib/sh-test-lib
 # shellcheck disable=SC1091
 . ../../lib/android-test-lib
-
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/:$PATH
 export PATH=$PWD/platform-tools:$PATH
 TIMEOUT="300"
 TEST_URL="http://testdata.validation.linaro.org/cts/android-cts-7.1_r1.zip"
