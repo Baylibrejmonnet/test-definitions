@@ -97,7 +97,7 @@ wait_boot_completed() {
             break
         else
             sleep 3
-            adb -s ${ANDROID_SERIAL} shell getprop 
+            
             
             
         fi

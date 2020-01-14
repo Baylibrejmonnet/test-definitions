@@ -68,4 +68,9 @@ run:
         # When adb device lost, end test job to mark it as 'incomplete'.
         - if ! adb shell echo ok; then error_fatal "adb device $ANDROID_SERIAL lost!"; fi
         - if echo "${TEST_REBOOT_EXPECTED}" |grep -i "true" ; then killall monitor_fastboot.sh; fi
+        - echo " je suis ici " pwd && ls 
+        - ls automated/android/noninteractive-tradefed/output
+        - cat result.txt  
+        - cat tradefed-logcat.txt  
+        - tradefed-stdout.txt
         - killall monitor_adb.sh
