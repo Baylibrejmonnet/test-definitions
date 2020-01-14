@@ -70,7 +70,7 @@ run:
         - if echo "${TEST_REBOOT_EXPECTED}" |grep -i "true" ; then killall monitor_fastboot.sh; fi
         - echo " je suis ici " pwd && ls 
         - ls output/
-        - cat result.txt  
-        - cat tradefed-logcat.txt  
-        - tradefed-stdout.txt
+        - cat output/result.txt  
+        - cat output/tradefed-logcat.txt  
+        - cat output/tradefed-stdout.txt
         - killall monitor_adb.sh
